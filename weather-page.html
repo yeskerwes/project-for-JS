@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="/styles/weather-page.css">
+</head>
+<body>
+  <video autoplay loop muted id="background-video">
+    <source src="/images/background-weather.mp4" type="video/mp4">
+    
+  </video>
+
+  <div id="app-container">
+    <div class="search-container">
+      <input type="text" id="city-input" placeholder="Enter city" autocomplete="off" oninput="showSuggestions()">
+      <button onclick="fetchWeather()">Search</button>
+      <button onclick="getCurrentLocation()">Use Current Location</button>
+      <div id="suggestions-list" class="suggestions-list"></div>
+    </div>    
+
+    <div class="current-weather">
+      <h2 id="city-name"></h2>
+      <p id="temperature"></p>
+      <p id="weather-condition"></p>
+      <p id="humidity"></p>
+      <p id="wind-speed"></p>
+      <img id="weather-icon" alt="Weather icon">
+      <button onclick="toggleUnits()">Switch to F°</button>
+    </div>
+
+    <div class="forecast-container">
+      <h3>3-Day Forecast</h3>
+      <div id="forecast" class="forecast-container-data">
+        <div id="forecast-data"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/script/weather-page.js"></script>
+</body>
+</html>

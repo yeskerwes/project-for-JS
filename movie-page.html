@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project JS</title>
+    <link rel="stylesheet" href="/styles/movie-page.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="search-movie">
+                <input type="text" class="search-box" placeholder="Поиск...">
+                <div class="suggestions-box" id="suggestions"></div>
+                <button class="search-button">Найти</button>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="start-background">
+         <video src="/images/background_for_movie.mp4" width="100%" height="auto" autoplay loop muted></video>
+    </div>
+    <section class="recomendations">
+        <div class="container">
+            <h3>Рекомендуемые фильмы:</h3>
+            <div class="movie-card-container" id="cardContainer">
+                <div class="movie-card" onclick="openDetails('movie_1')">
+                    <img src="/images/movie_1.png" alt="" class="movie-card-img">
+                </div>
+                <div class="movie-card" onclick="openDetails('movie_2')">
+                    <img src="/images/movie_2.png" alt="" class="movie-card-img">
+                </div>
+                <div class="movie-card" onclick="openDetails('movie_3')">
+                    <img src="/images/movie_3.png" alt="" class="movie-card-img">
+                </div>
+                <div class="movie-card" onclick="openDetails('movie_4')">
+                    <img src="/images/movie_4.png" alt="" class="movie-card-img">
+                </div>
+                <div class="movie-card" onclick="openDetails('movie_5')">
+                    <img src="/images/movie_5.png" alt="" class="movie-card-img">
+                </div>
+                <div class="movie-card" onclick="openDetails('movie_6')">
+                    <img src="/images/movie_6.png" alt="" class="movie-card-img">
+                </div>
+                <div class="movie-card" onclick="openDetails('movie_7')">
+                    <img src="/images/movie_7.png" alt="" class="movie-card-img">
+                </div>
+            </div>
+    
+            <h3>Сериалы:</h3>
+            <div class="movie-card-container">
+                <div class="movie-card" onclick="openDetails('movie_8')">
+                    <img src="/images/movie_8.png" alt="" class="movie-card-img">
+                </div>
+                <div class="movie-card" onclick="openDetails('movie_9')">
+                    <img src="/images/movie_9.png" alt="" class="movie-card-img">
+                </div>
+                <div class="movie-card" onclick="openDetails('movie_10')">
+                    <img src="/images/movie_10.png" alt="" class="movie-card-img">
+                </div>
+                <div class="movie-card" onclick="openDetails('movie_11')">
+                    <img src="/images/movie_11.png" alt="" class="movie-card-img">
+                </div>
+                <div class="movie-card" onclick="openDetails('movie_12')">
+                    <img src="/images/movie_12.png" alt="" class="movie-card-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контейнер для всплывающего окна с подробностями фильма -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <button class="close-button" onclick="closeDetails()">x</button>
+            <h2 id="movieTitle">Название фильма</h2>
+            <p id="movieDescription">Описание фильма...</p>
+            <button id="addToFavoriteButton" class="favorite-button" onclick="toggleFavorite()">Добавить в избранное</button>
+        </div>
+    </div>
+    
+    <!-- Секция для отображения результатов поиска -->
+     <section class="search-results">
+        <div id="search-results-container" class="search-results-container">
+            <div class="search-results-header">
+                <div class="search-results-header-sorts">
+                    <button onclick="sortResults('release_date')">Сортировать по дате</button>
+                    <button onclick="sortResults('vote_average')">Сортировать по рейтингу</button>
+                </div>
+                <button class="favorite-button" onclick="openFav()">
+                    <img src="/images/favorite_icon.png" alt="" width="30px" height="auto"> Потом көру
+                </button>
+                
+            </div>
+            <div id="search-results"></div>
+        </div>
+     </section>
+
+    <!-- Контейнер для всплывающего окна с избранными фильмами -->
+    <div class="popup" id="favoritesPopup">
+        <div class="popup-content">
+            <button class="close-button" onclick="closeFavorites()">x</button>
+            <h2>Избранные фильмы</h2>
+            <div id="favoritesList"></div>
+        </div>
+    </div>
+
+    <script src="/script/movie-page.js"></script> 
+</body>
+</html>

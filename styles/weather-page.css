@@ -1,0 +1,156 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+#app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.search-container input {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #A8DADC; 
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-container input:focus {
+    border-color: #457B9D; 
+}
+
+.search-container button {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: none;
+    color: #FFFFFF;
+    background-color: #1D3557; 
+    cursor: pointer;
+    margin-left: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #457B9D;
+}
+
+.suggestions-list {
+    max-width: 200px;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 5px;
+    z-index: 999;
+  }
+  
+  .suggestions-list div {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .suggestions-list div:hover {
+    background-color: #f1f1f1;
+  }  
+
+.current-weather {
+    background: rgba(69, 123, 157, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.current-weather h2 {
+    color: #1D3557;
+    font-size: 28px;
+}
+
+.current-weather p {
+    color: #457B9D;
+    margin: 5px 0;
+}
+
+.current-weather img {
+    width: 80px;
+    height: 80px;
+}
+
+.forecast-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .forecast-container-data {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  .forecast-item {
+    background: #FFD166;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 150px;
+    height: 120px;
+  }
+  
+  .forecast-day {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1D3557;
+  }
+  
+  .forecast-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .forecast-item p {
+    color: #457B9D;
+    margin: 5px 0;
+  }
+  
+.current-weather button {
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: none;
+    color: #FFFFFF;
+    background-color: #FFDD57; 
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.current-weather button:hover {
+    background-color: #FFD166;
+}
